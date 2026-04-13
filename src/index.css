@@ -3,6 +3,10 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
 
+html{
+  scroll-behavior: smooth;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -119,12 +123,12 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
-    }
+    @apply border-border outline-ring/50 transition-colors duration-200;
+  }
   body {
-    @apply bg-background text-foreground;
-    }
+    @apply bg-background text-foreground transition-colors duration-200;
+  }
   html {
     @apply font-sans;
-    }
+  }
 }

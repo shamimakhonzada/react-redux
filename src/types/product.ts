@@ -50,3 +50,19 @@ export interface Meta {
   barcode: string;
   qrCode: string;
 }
+
+export type SortOption =
+  | "title-asc"
+  | "title-desc"
+  | "price-asc"
+  | "price-desc"
+  | "";
+
+export interface FilterState {
+  search: string;
+  sortBy: SortOption;
+}
+
+export interface FilterProductsProps {
+  onChange: (filters: FilterState) => void;
+}
