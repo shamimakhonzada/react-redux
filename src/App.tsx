@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import UserForm from "./pages/UserForm";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import ProductDetail from "./components/product-detail";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route index element={<Dashboard />} />
           <Route path="user-form" element={<UserForm />} />
+          <Route path="product/:id" element={<ProductDetail />} />
         </Routes>
       </main>
       <Footer />

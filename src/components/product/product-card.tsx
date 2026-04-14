@@ -1,16 +1,22 @@
 import { Badge } from "@/components/ui/badge";
 import { CardTitle } from "@/components/ui/card";
 import type { Product } from "@/types/product";
+import { useNavigate } from "react-router-dom";
 
 export function ProductCard({ product }: { product: Product }) {
+  const navigate = useNavigate();
+
   return (
-    <div className="group border relative mx-auto w-full max-w-sm overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
+    <div
+      onClick={() => navigate(`product/${product.id}`)}
+      className=" cursor-pointer group border relative mx-auto w-full max-w-sm overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300"
+    >
       {/* Image */}
       <div className="relative overflow-hidden">
         {/* Image Section */}
         <div className="relative aspect-square overflow-hidden bg-muted">
           <img
-            src={product.images[0]}
+            src={product.thumbnail}
             alt={product.title}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
             loading="lazy"

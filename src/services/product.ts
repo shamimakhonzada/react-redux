@@ -1,6 +1,6 @@
 // Need to use the React-specific entry point to import createApi
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import type { ProductResponse } from "../types/product";
+import type { Product, ProductResponse } from "../types/product";
 
 interface GetProductsArgs {
   limit: number;
@@ -38,9 +38,12 @@ export const productApi = createApi({
         return currentArg !== previousArg;
       },
     }),
+    getProductById: builder.query<Product, string>({
+      query: (id) => `products/${id}`,
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetProductsQuery } = productApi;
+export const { useGetProductsQuery, useGetProductByIdQuery } = productApi;
