@@ -15,20 +15,19 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "./ui/carousel";
+} from "../../components/ui/carousel";
 import { useState, useRef } from "react";
 import { Rating } from "@mui/material";
-import { Button } from "./ui/button";
-import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "@/store/store";
+import { Button } from "../../components/ui/button";
 import { addToCart } from "@/features/cart/cartSlice";
 import { toggleWishlist } from "@/features/wishlist/wishlistSlice";
-import { ProductDetailSkeleton } from "./product/product-detail-skeleton";
+import { ProductDetailSkeleton } from "./product-detail-skeleton";
 import { cn } from "@/lib/utils";
+import { useAppDispatch, useAppSelector } from "@/app/hooks";
 
 export default function ProductDetail() {
   const { id } = useParams();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const [selectedImage, setSelectedImage] = useState("");
   const [zoom, setZoom] = useState(false);
@@ -40,8 +39,8 @@ export default function ProductDetail() {
     isError,
   } = useGetProductByIdQuery(id || "");
 
-  const cartItems = useSelector((s: RootState) => s.cart.items);
-  const wishlistItems = useSelector((s: RootState) => s.wishlist.items);
+  const cartItems = useAppSelector((s) => s.cart.items);
+  const wishlistItems = useAppSelector((s) => s.wishlist.items);
 
   const isInCart = product ? cartItems.some((i) => i.id === product.id) : false;
   const isWishlisted = product

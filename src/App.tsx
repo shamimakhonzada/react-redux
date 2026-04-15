@@ -4,7 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import UserForm from "./pages/UserForm";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import ProductDetail from "./components/product-detail";
+import ProductDetail from "./features/product/product-detail";
 
 function App() {
   return (

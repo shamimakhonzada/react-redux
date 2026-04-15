@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,7 +16,7 @@ import {
   setSortBy,
   resetFilters,
 } from "@/features/product/productSlice";
-import type { RootState } from "@/store/store";
+import { useAppDispatch, useAppSelector } from "@/app/hooks";
 
 const sortOptions = [
   { value: "title-asc" as const, label: "Title A → Z" },
@@ -27,8 +26,8 @@ const sortOptions = [
 ];
 
 export function FilterProducts() {
-  const dispatch = useDispatch();
-  const { search, sortBy } = useSelector((state: RootState) => state.product);
+  const { search, sortBy } = useAppSelector((state) => state.product);
+  const dispatch = useAppDispatch();
 
   const [searchInput, setSearchInput] = useState(search);
 

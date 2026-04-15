@@ -1,17 +1,16 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useSelector } from "react-redux";
 import { useGetProductsQuery } from "@/services/product";
 import { ProductCard } from "./product-card";
 import { ProductGridSkeleton } from "./product-grid-skeleton";
 import type { Product } from "@/types/product";
-import { ErrorCard } from "../error-card";
-import type { RootState } from "@/store/store";
+import { ErrorCard } from "../../components/error-card";
+import { useAppSelector } from "@/app/hooks";
 
 const PAGE_SIZE = 20;
 
 export default function ProductGrid() {
   const [skip, setSkip] = useState(0);
-  const { search, sortBy } = useSelector((state: RootState) => state.product);
+  const { search, sortBy } = useAppSelector((state) => state.product);
 
   // Reset pagination when filters change
   useEffect(() => {

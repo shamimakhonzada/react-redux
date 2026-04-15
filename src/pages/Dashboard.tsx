@@ -1,5 +1,5 @@
-import ProductGrid from "@/components/product/product-grid";
-import { FilterProducts } from "@/components/product/filter-products";
+import ProductGrid from "@/features/product/product-grid";
+import { FilterProducts } from "@/features/product/filter-products";
 
 export default function Dashboard() {
   return (
