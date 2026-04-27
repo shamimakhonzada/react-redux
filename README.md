@@ -2,20 +2,20 @@
 
 A professional, high-performance React application featuring a dynamic product dashboard and validated user registration system. Built with **React 19**, **Redux Toolkit**, and **Tailwind CSS 4**.
 
-## 🚀 Overview
+## Overview
 
 This project is a modern frontend application designed with a focus on usability, performance, and maintainable architecture. It implements a feature-based folder structure and utilizes a robust tech stack for state management and form validation.
 
 ### Key Features
-- 📦 **Product Management**: Real-time product listing with search and category filtering.
-- 📝 **Dynamic Forms**: Sophisticated user registration form with real-time validation.
-- 🌗 **Dark Mode**: Seamless theme switching supported by `next-themes`.
-- 📱 **Responsive Design**: Fully optimized for mobile, tablet, and desktop views.
-- ✨ **Rich UI**: Interactive components built with Shadcn UI and Lucide icons.
+- **Product Management**: Real-time product listing with search and category filtering.
+- **Dynamic Forms**: Sophisticated user registration form with real-time validation.
+- **Dark Mode**: Seamless theme switching supported by `next-themes`.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop views.
+- **Rich UI**: Interactive components built with Shadcn UI and Lucide icons.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Core
 - **React 19**: The latest version of React for building modern user interfaces.
@@ -35,7 +35,7 @@ This project is a modern frontend application designed with a focus on usability
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 src/
@@ -88,7 +88,7 @@ Ensure you have [Node.js](https://nodejs.org/) (v18+) and [pnpm](https://pnpm.io
 
 ---
 
-## 📝 Best Practices
+## Best Practices
 - **Atomic Components**: Components are kept small and focused.
 - **Zod Validation**: All form inputs are strictly validated before submission.
 - **Type Safety**: Extensive use of TypeScript for predictable code behavior.
